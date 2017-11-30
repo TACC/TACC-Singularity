@@ -23,7 +23,7 @@ The following tutorial explains the steps to convert a Docker image into a Singu
     93701159904b: Pull complete 
     Digest: sha256:89e68eabc3840b640f1037b233b5c9c81f12965b45c04c11ff935f0b34fac364
     Status: Downloaded newer image for simonalpha/ncbi-blast-docker:latest
-```
+    ```
 
 2. Run [docker2singularity](https://github.com/singularityware/docker2singularity) to convert the docker image. This tool will run inside a docker container.
     ```
