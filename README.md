@@ -5,12 +5,12 @@ Singularity enables users of shared systems, such as HPC clusters, to take advan
 
 > Singularity enables users to have full control of their environment. This means that a non-privileged user can “swap out” the operating system on the host for one they control. So if the host system is running RHEL6 but your application runs in Ubuntu, you can create an Ubuntu image, install your applications into that image, copy the image to another host, and run your application on that host in it’s native Ubuntu environment!
 
-TACC currently supports Singularity on its [Stampede](https://portal.tacc.utexas.edu/user-guides/stampede) cluster. Support for other TACC clusters is planned in the coming months. In addition, Docker and other container ecosystem applicaitons can be run natively on the joint IU-TACC [Jetstream cloud system](http://www.jetstream-cloud.org/). We will continue to enhance and refine our support for Singularity by packaging additional utilities with it on our systems and by providing tutorials via this Github repository.
+TACC currently supports Singularity on its [Stampede2](https://portal.tacc.utexas.edu/user-guides/stampede2) cluster. Support for other TACC clusters is planned in the coming months. In addition, Docker and other container ecosystem applicaitons can be run natively on the joint IU-TACC [Jetstream cloud system](http://www.jetstream-cloud.org/). We will continue to enhance and refine our support for Singularity by packaging additional utilities with it on our systems and by providing tutorials via this Github repository.
 
 Key Issues:
 -----------
 
-* The current installed version of Singularity on Stampede is *2.1*
+* The current installed version of Singularity on Stampede2 is *2.3.1*
 * Environment variables set outside of the container will be active inside it unless the container specifically overrides them. This might be particularly confusing if you are using Python from within the container, but have `PYTHONPATH` set to incompatible libraries. One easy solution is to unset `PYTHONPATH` before running a container.
 * Singularity containers are almost completely read-only. You can only write to: $HOME, /work and /scratch which correspond to filesystems on the Stampede host. One handy consequence of environment variables being inherited from the host is that `$WORK` and `$SCRATCH` resolve to your actual directories inside a Singularity container.
 * Each container intended to work on Stampede needs to include `/home1` `/work` and `/scratch` folders which will serve as mount points.
@@ -24,7 +24,7 @@ Tutorials
 References
 ----------
 * [Singularity](http://singularity.lbl.gov/)
-* [Stampede User Guide](https://portal.tacc.utexas.edu/user-guides/stampede)
+* [Stampede2 User Guide](https://portal.tacc.utexas.edu/user-guides/stampede2)
 * [TACC User Portal](https://portal.tacc.utexas.edu/)
 * [Jetstream Cloud](http://www.jetstream-cloud.org/)
 * [Open Container Project](https://runc.io/)
