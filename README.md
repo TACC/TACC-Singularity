@@ -10,7 +10,7 @@ TACC currently supports Singularity on its [Stampede](https://portal.tacc.utexas
 Key Issues:
 -----------
 
-* The current installed version of Singularity on Stampede is *2.1*
+* The current installed version of Singularity on Stampede2 is *2.3.1*
 * Environment variables set outside of the container will be active inside it unless the container specifically overrides them. This might be particularly confusing if you are using Python from within the container, but have `PYTHONPATH` set to incompatible libraries. One easy solution is to unset `PYTHONPATH` before running a container.
 * Singularity containers are almost completely read-only. You can only write to: $HOME, /work and /scratch which correspond to filesystems on the Stampede host. One handy consequence of environment variables being inherited from the host is that `$WORK` and `$SCRATCH` resolve to your actual directories inside a Singularity container.
 * Each container intended to work on Stampede needs to include `/home1` `/work` and `/scratch` folders which will serve as mount points.
